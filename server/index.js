@@ -7,6 +7,12 @@ const app = express();
 const port = 4000;
 
 app.use(express.json());
+app.use(
+    cors({
+      origin: ["https://sudoku-play-and-solve.vercel.app"],
+      credentials: true,
+    })
+  );
 
 app.use("/api", generateRoute);
 app.use("/api", solveRoute);
