@@ -4,7 +4,7 @@ module.exports = function (app) {
 	app.use(
 		"/api",
 		createProxyMiddleware({
-			target: "http://localhost:4000",
+			target: "https://sudoku-play-and-solve-api.vercel.app/",
 			changeOrigin: true,
 		})
 	);
