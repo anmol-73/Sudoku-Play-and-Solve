@@ -1,0 +1,18 @@
+.home-utilitybuttons 
+{
+    /* Styles for large screens (lg) */
+    @media (min-width: 1280px) {
+        width: 25%;
+    }
+    
+    /* Styles for medium screens (md) */
+    @media (min-width: 960px) and (max-width: 1279.99px) {
+        width: 33.33%;
+    }
+    
+    /* Styles for small screens (xs) */
+    @media (max-width: 959.99px) {
+        width: 100%;
+    }
+}
+  

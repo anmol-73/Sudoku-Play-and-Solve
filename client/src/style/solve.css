@@ -1,0 +1,35 @@
+@media (max-width: 599px) {
+    .solve-grid-item {
+      /* Styles for small screens */
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 959px) {
+    .solve-grid-item {
+      /* Styles for medium screens */
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 960px) {
+    .solve-grid-item {
+      /* Styles for large screens */
+      width: 33.33%;
+    }
+  }
+  
+  @media (max-width: 959px) {
+    .solve-grid {
+      /* Styles for small and medium screens */
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (min-width: 960px) {
+    .solve-grid {
+      /* Styles for large screens */
+      flex-wrap: nowrap;
+    }
+  }
+  
