@@ -2,6 +2,7 @@ const express = require("express");
 const generateRoute = require("./routes/generateRoute");
 const solveRoute = require("./routes/solveRoute");
 const uniqueRoute = require("./routes/uniqueRoute");
+const cors = require('cors');
 
 const app = express();
 const port = 4000;
