@@ -33,6 +33,11 @@ const Solve = () => {
 	const [solvingState, setSolvingState] = useState(-1);
 
     const solvingStates = ["Solving", "Solving.", "Solving..", "Solving..."];
+    const client = axios.create({
+        baseURL: "https://sudoku-play-and-solve-api.vercel.app/",
+        WithCredentials: true,
+    });
+
 	useEffect(() => {
 		let interval;
 
@@ -84,7 +89,7 @@ const Solve = () => {
 	const fetchSolution = (newGrid) => {
 		return new Promise((resolve, reject) => {
 			setIsRunning(true);
-			axios
+			client
 				.post("/api/solve", { puzzle: newGrid })
 				.then((response) => {
 					setIsRunning(false);

@@ -37,6 +37,11 @@ const Home = () => {
     const [solved, setSolved] = useState(false);
     const [congratulations, setCongratulations] = useState(false);
 
+    const client = axios.create({
+        baseURL: "https://sudoku-play-and-solve-api.vercel.app/",
+        WithCredentials: true,
+    });
+
     useEffect(() => {
 		fetchGeneratedSudoku("easy");
 	}, []);
@@ -96,7 +101,7 @@ const Home = () => {
 	};
 
 	const fetchGeneratedSudoku = (difficulty) => {
-		axios
+		client
 			.get(`/api/generate?difficulty=${difficulty}`)
 			.then((response) => {
 				const generatedSudoku = response.data.grid;
@@ -107,7 +112,7 @@ const Home = () => {
 				const newSudoku = JSON.parse(JSON.stringify(generatedSudoku));
 				setGridHistory([newSudoku]);
 
-				axios
+				client
 					.post("/api/solve", { puzzle: generatedSudoku })
 					.then((response) => {
 						const solution = response.data.solution;
